@@ -1,3 +1,32 @@
+.navigation-container {
+    left: 70%;
+    position: flex;
+}
+
+.profile-dropdown {
+    right: 30px;
+    top: 30px;
+    position: fixed;
+    list-style-type: none;
+}
+
+.navigation-top {
+    display: flex;
+    align-items: center;
+    height: 75px;
+}
+
+.navigation-top-right {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+
 .hidden {
     display: none;
+}
+
+.profile-dropdown>li>button:hover {
+    cursor: pointer;
 }
