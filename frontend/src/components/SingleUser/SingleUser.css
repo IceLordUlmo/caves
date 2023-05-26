@@ -1,11 +1,29 @@
 .champion1 {
     color: gold;
+    font-size: 200%;
 }
 
 .champion2 {
     color: silver;
+    font-size: 166%;
 }
 
 .champion3 {
     color: coral;
+    font-size: 133%;
+}
+
+.single-user-external {
+    flex-direction: row;
+    display: flex;
+    width: 400px;
+    padding: 10px;
+}
+
+.single-user-name {
+    width: 200px;
+}
+
+.single-user-kill-count {
+    width: 200px;
 }

@@ -6,19 +6,23 @@ import { Link } from 'react-router-dom'
 
 import './Leaderboard.css'
 
-export function Leaderboard() {
+export function Leaderboard()
+{
     const dispatch = useDispatch();
     let leaderboard = useSelector(state => state.session.leaderboard);
 
-    useEffect(() => {
+    useEffect(() =>
+    {
         dispatch(getLeaderboardThunk())
 
     }, [dispatch])
-    if (!leaderboard) {
+    if (!leaderboard)
+    {
         return;
     }
     // turn users into an array
-    for (let user of leaderboard) {
+    for (let user of leaderboard)
+    {
         user.index = leaderboard.indexOf(user)
     }
 
@@ -29,14 +33,18 @@ export function Leaderboard() {
             <h1>
                 Leaderboard
             </h1>
-            {
-                leaderboard?.map((user) => {
-                    console.log(user);
-                    return (
-                        <SingleUser user={user} />
-                    )
-                })
-            }
+            <div className='leaderboard-column'>
+                {
+                    leaderboard?.map((user) =>
+                    {
+                        console.log(user);
+                        return (<div className='leaderboard-user'>
+                            <SingleUser user={user} />
+                        </div>
+                        )
+                    })
+                }
+            </div>
             <div className='leaderboard-exit'>
                 <Link to='/'>Back to Landing</Link>
             </div>

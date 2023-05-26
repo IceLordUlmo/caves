@@ -1,0 +1,29 @@
+h1 {
+    width: 500px
+}
+
+.leaderboard-outermost {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.leaderboard-user {
+    width: 300px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+
+}
+
+.leaderboard-column {
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.leaderboard-exit {
+    padding: 15px;
+    font-size: 28px;
+}
