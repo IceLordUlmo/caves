@@ -39,6 +39,40 @@ const validateSignup = [
     handleValidationErrors
 ];
 
+// leaderboard
+router.get('/leaderboard',
+    async (req, res) => {
+        const usersByCount = await User.findAll({
+            attributes: ['username',
+                'killCount'],
+            order: [['killCount', 'DESC']]
+        })
+
+        return res.json(usersByCount)
+    }
+)
+
+router.put(
+    '',
+    async (req, res) => {
+        const { newKills, id } = req.body;
+        const userToUpdate = await User.findOne({
+            where: {
+                id: id
+            }
+        })
+
+        userToUpdate.update({
+            killCount: (userToUpdate.killCount + newKills)
+        })
+
+        return res.json({
+            user: userToUpdate
+        })
+    }
+)
+
+
 // Sign up
 router.post(
     '',
@@ -53,7 +87,8 @@ router.post(
             email: user.email,
             username: user.username,
             firstName: user.firstName,
-            lastName: user.lastName
+            lastName: user.lastName,
+            killCount: 0
         };
 
         await setTokenCookie(res, safeUser);

@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [60, 60]
         }
+      },
+      killCount: {
+        type: DataTypes.INTEGER
       }
     },
     {

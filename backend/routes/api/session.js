@@ -54,6 +54,7 @@ router.post(
             username: user.username,
             firstName: user.firstName,
             lastName: user.lastName,
+            killCount: user.killCount
         };
 
         await setTokenCookie(res, safeUser);
@@ -85,6 +86,7 @@ router.get(
                 username: user.username,
                 firstName: user.firstName,
                 lastName: user.lastName,
+                killCount: user.killCount
             };
             return res.json({
                 user: safeUser
