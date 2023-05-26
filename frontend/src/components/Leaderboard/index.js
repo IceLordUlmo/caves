@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLeaderboardThunk } from '../../store/session'
 import SingleUser from "../SingleUser"
+import { Link } from 'react-router-dom'
 
 import './Leaderboard.css'
 
@@ -36,6 +37,10 @@ export function Leaderboard() {
                     )
                 })
             }
+            <div className='leaderboard-exit'>
+                <Link to='/'>Back to Landing</Link>
+            </div>
         </div>
+
     )
 }

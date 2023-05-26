@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './Landing.css'
@@ -6,6 +6,8 @@ import Combat from "../Combat";
 
 export function Landing() {
     const sessionUser = useSelector(state => state.session.user);
+
+    useEffect(() => { }, [sessionUser])
 
     return (
         <div className='landing-container'>
@@ -22,10 +24,15 @@ export function Landing() {
                 </div>
             </div>
             <div className='landing-div-two'>
-                <h3 className='landing-div-two-subtitle'>
-                    Subtitle
-                </h3>
-                <p className='landing-div-two-caption'>Caption</p>
+                {sessionUser ? (
+                    <div>
+                        <h3 className='landing-div-two-subtitle'>
+                            Welcome, {sessionUser.username}
+                        </h3>
+                        <p className='landing-div-two-caption'>{sessionUser.killCount} is your score.</p>
+                    </div>) :
+                    (<h3></h3>)
+                }
             </div>
             <div className='landing-div-three'>
                 <Link className='landing-div-three-link' to='/'>
