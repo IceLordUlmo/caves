@@ -28,7 +28,7 @@ export function Landing() {
                 <p className='landing-div-two-caption'>Caption</p>
             </div>
             <div className='landing-div-three'>
-                <Link className='landing-div-three-link' to='/postcombat'>
+                <Link className='landing-div-three-link' to='/'>
                     <Combat />
                 </Link>
                 <Link className='landing-div-three-link' to='/leaderboard'>
